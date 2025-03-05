@@ -28,11 +28,11 @@
       </xs:appinfo>
    </xs:annotation>
    <xs:include schemaLocation="xschule-baukasten.xsd"/>
-   <xs:import schemaLocation="http://www.w3.org/TR/2002/REC-xmldsig-core-20020212/xmldsig-core-schema.xsd"
+   <xs:import schemaLocation="../../xmldsig/xmldsig-core-schema.xsd"
               namespace="http://www.w3.org/2000/09/xmldsig#"/>
-   <xs:import schemaLocation="http://xbildung.de/def/xbildung/1.1/xsd/xbildung-baukasten.xsd"
+   <xs:import schemaLocation="../../xbildung/1.1/xbildung-baukasten.xsd"
               namespace="http://xbildung.de/def/xbildung/1.1/xsd"/>
-   <xs:import schemaLocation="https://xoev.de/schemata/din/91379/2022-08/din-norm-91379-datatypes.xsd"
+   <xs:import schemaLocation="../../xoev/din/2022-08/din-norm-91379-datatypes.xsd"
               namespace="urn:xoev-de:kosit:xoev:datentyp:din-91379_2022-08"/>
    <xs:element name="schueler.wechsel.0001">
       <xs:annotation>
