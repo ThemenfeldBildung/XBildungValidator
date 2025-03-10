@@ -1,0 +1,93 @@
+<!--
+    Hilfsdatei um das Banner und Footer auf https://www.itb.ec.europa.eu/xbildung/upload zu gestalten.
+    Dieser Text wird dann in der config.properties Datei in Zeile validator.bannerHtml eingefügt.
+
+    Hierfür müssen die Zeilenumbrüche entfernt werden (z.B. mittels http://removelinebreaks.net/ Setting "Convert paragraphs to" auf "No paragraph" setzen).
+    Javascript muss minifed werden (z.B. auf https://www.toptal.com/developers/javascript-minifier).
+    Für das responsive Design wird Bootstrap 3.4.1 (https://getbootstrap.com/docs/3.4/) verwendet, das bereits vom Validator selbst eingebunden wurde.
+-->
+
+<!-- BANNER -->
+
+<div class="row">
+    <div class="col-xs-12 col-sm-4 col-md-3 text-center"><img style="margin-bottom: 15px; width: 80%;" alt="XBildung Logo" src="https://xbildung.de/web/sites/default/files/XBD_Logo_DE.svg"></div>
+    <div class="col-xs-12 col-sm-8 col-md-9 text-center"><h2>XBildung Validator (BETA)</h2></div>
+</div>
+<div class="row">
+    <div class="col-xs-12 col-sm-8 col-sm-offset-4 col-md-9 col-md-offset-3">
+        <p>Mit diesem Validator können Sie XML-Nachweise, die für die Standards XHochschule, XSchule oder XBerufsbildung erstellt wurden, validieren. Es erfolgt sowohl eine Überprüfung der Schema- als auch der Schematron-Konformität.</p>
+        <p>Die Prüfungen der Konformität bauen aufeinander auf, ein erfolgreiches Validieren der vorigen Prüfebene ist Grundlage für die darauffolgenden Prüfschritte.</p>
+        <ol type="1">
+            <li data-once="ul" class="li-0">XML-Konformität: XML Wellformedness (Sind alle Tags geschlossen, gibt es ein root-Element?)</li>
+            <li data-once="ul" class="li-0">XSD-Konformität: Sind die Angaben gemäß der XML Schemadefinition (Reihenfolgen, Pflichtfelder, Enumeration) konform?</li>
+            <li data-once="ul" class="li-0">ISO Schematron-Konformität: Werden die formulierten Geschäftsregeln eingehalten?</li>
+            <li data-once="ul" class="li-0">Spezifikationskonformität: lässt sich nicht automatisiert prüfen, kann nur durch menschlichen Einsatz geprüft werden</li>
+        </ol>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+        <h4>Beispieldateien mit Fehlern</h4>
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Nachweis</th>
+                        <th>Fehler</th>
+                        <th>Link <small>&nbsp;&nbsp;&nbsp;(Klicken zum Formular befüllen.)</small></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>XSC 1.1: Schulbescheinigung</td>
+                        <td><ul>
+                            <li>Fehlender Nachname</li>
+                            <li>Falscher Codelistenwert</li>
+                        </ul></td>
+                        <td><a class="quickset" data-type="xschule" data-option="V1.1" href="https://raw.githubusercontent.com/ThemenfeldBildung/XBildungValidator/refs/heads/master/samples/1_1_XSchule_Schulbescheinigung_01.xml">https://raw.githubusercontent.com/ThemenfeldBildung/XBildungValidator/refs/heads/master/samples/1_1_XSchule_Schulbescheinigung_01.xml</a></td>
+                    </tr>
+                    <tr>
+                        <td>XSC 1.1: Abiturzeugnis</td>
+                        <td><ul>
+                            <li>Zwei EQR-Angaben</li>
+                            <li>Schematron: kein Abiturfach</li>
+                        </ul></td>
+                        <td><a class="quickset" data-type="xschule" data-option="V1.1" href="https://raw.githubusercontent.com/ThemenfeldBildung/XBildungValidator/refs/heads/master/samples/1_1_XSchule_Abiturzeugnis_NW_01.xml">https://raw.githubusercontent.com/ThemenfeldBildung/XBildungValidator/refs/heads/master/samples/1_1_XSchule_Abiturzeugnis_NW_01.xml</a></td>
+
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <h4>Beispieldateien ohne Fehler</h4>
+        <p>Beispieldateien ohne Fehler finden Sie in den Veröffentlichungen der jeweiligen Vorhaben: 
+            XSchule (<a href="https://xschule.digital/def/xschule/1.0/xml/" target="_blank">1.0</a> / <a href="https://xschule.digital/def/xschule/1.1/xml/" target="_blank">1.1</a>), 
+            XHochschule (<a href="https://xhochschule.de/def/xhochschule/1.0/xml/" target="_blank">1.0</a> / <a href="https://xhochschule.de/def/xhochschule/1.1/xml/" target="_blank">1.1</a>) und 
+            XBerufsbildung (<a href="https://xberufsbildung.de/def/xberufsbildung/0.4/xml/" target="_blank">0.4</a>)
+        </ul>
+    </div>
+</div>
+<hr>
+
+<!-- JAVASCRIPT -->
+
+<code>    
+    // $("#contentType").val("uriType").change();
+    // $("#uri").val("https://raw.githubusercontent.com/ThemenfeldBildung/XBildungValidator/refs/heads/master/samples/1_1_XSchule_Abiturzeugnis_NW_01.xml");
+    // $("#validationType").val("xschule").change(); 
+    // $("#validationTypeOption").val("V1.1").change(); 
+    
+    $(document).ready(function() {
+        $('.quickset').on('click', function(event) {
+            event.preventDefault();
+            let uri = $(this).attr('href');
+            let type = $(this).data('type');
+            let option = $(this).data('option');
+            $("#contentType").val("uriType").change();
+            $("#uri").val(uri);
+            $("#validationType").val(type).change(); 
+            $("#validationTypeOption").val(option).change(); 
+            // console.log(uri, type, option);
+        });
+    });
+</code>
