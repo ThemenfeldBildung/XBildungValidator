@@ -28,11 +28,11 @@
       </xs:appinfo>
    </xs:annotation>
    <xs:include schemaLocation="xberufsbildung-baukasten.xsd"/>
-   <xs:import schemaLocation="http://xbildung.de/def/xbildung/1.0/xsd/xbildung-baukasten.xsd"
+   <xs:import schemaLocation="../../xbildung/1.0/xbildung-baukasten.xsd"
               namespace="http://xbildung.de/def/xbildung/1.0/xsd"/>
-   <xs:import schemaLocation="http://xoev.de/schemata/code/1_0/xoev-code.xsd"
+   <xs:import schemaLocation="../../xoev/code/1.0/xoev-code.xsd"
               namespace="http://xoev.de/schemata/code/1_0"/>
-   <xs:import schemaLocation="https://xoev.de/schemata/din/91379/2022-08/din-norm-91379-datatypes.xsd"
+   <xs:import schemaLocation="../../xoev/din/2022-08/din-norm-91379-datatypes.xsd"
               namespace="urn:xoev-de:kosit:xoev:datentyp:din-91379_2022-08"/>
    <xs:element name="pruefling.pruefungszeugnis.0001">
       <xs:annotation>
