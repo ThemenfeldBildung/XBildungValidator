@@ -64,8 +64,30 @@
                             <li>Schematron: kein Abiturfach</li>
                         </ul></td>
                         <td><a class="quickset" data-type="xschule" data-option="V1.1" href="https://raw.githubusercontent.com/ThemenfeldBildung/XBildungValidator/refs/heads/master/samples/1_1_XSchule_Abiturzeugnis_NW_01.xml">https://raw.githubusercontent.com/ThemenfeldBildung/XBildungValidator/refs/heads/master/samples/1_1_XSchule_Abiturzeugnis_NW_01.xml</a></td>
-
-                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>XHS 1.1: Hochschulabschlusszeugnis</td>
+                        <td><ul>
+                            <li>Schematron: note enthält unzulässige Eingabe</li>
+                            <li>lateinischeEhrenbezeichnung auf nicht existierenden Wert "summe_cum_laude" gesetzt</li>
+                        </ul></td>
+                        <td><a class="quickset" data-type="xhochschule" data-option="V1.1" href="https://raw.githubusercontent.com/ThemenfeldBildung/XBildungValidator/refs/heads/master/samples/1_1_XHS_Hochschulabschlusszeugnis.xml">https://raw.githubusercontent.com/ThemenfeldBildung/XBildungValidator/refs/heads/master/samples/1_1_XHS_Hochschulabschlusszeugnis.xml</a></td>
+                    </tr>
+                    <tr>
+                        <td>XHS 1.1: Immatrikulationsbescheinigung</td>
+                        <td><ul>
+                            <li>Vorname enthält unzulässige Zeichen</li>
+                            <li>Schematron: Immatrikulationsstatus "~wert_nicht_in_liste" verlangt Freitextfeld "nichtGelisteterWert"</li>
+                        </ul></td>
+                        <td><a class="quickset" data-type="xhochschule" data-option="V1.1" href="https://raw.githubusercontent.com/ThemenfeldBildung/XBildungValidator/refs/heads/master/samples/1_1_XHS_Immatrikulationsbescheinigung.xml">https://raw.githubusercontent.com/ThemenfeldBildung/XBildungValidator/refs/heads/master/samples/1_1_XHS_Immatrikulationsbescheinigung.xml</a></td>
+                    </tr>
+                    <tr>
+                        <td>XBBD 0.4: Immatrikulationsbescheinigung</td>
+                        <td><ul>
+                            <li>Falsches Format der Datumsangabe</li>
+                            <li>fehlende Bezeichnung eines Prüfungsteils</li>
+                        </ul></td>
+                        <td><a class="quickset" data-type="xberufsbildung" data-option="V0.4" href="https://raw.githubusercontent.com/ThemenfeldBildung/XBildungValidator/refs/heads/master/samples/0_4_XBBD_Pruefungszeugnis_IHK_Muenchen_Oberbayern_01.xml">https://raw.githubusercontent.com/ThemenfeldBildung/XBildungValidator/refs/heads/master/samples/0_4_XBBD_Pruefungszeugnis_IHK_Muenchen_Oberbayern_01.xml</a></td>
                     </tr>
                 </tbody>
             </table>
